@@ -4,12 +4,12 @@
   <script>
     $Lightning.use(
       "lightningOutTestApp",
-      () {
+      function () {
         $Lightning.createComponent (
             "testLightningOut",
             {},
             document.querySelector("[data-wrapper-div]"),
-            (cmp) {
+            function (cmp) {
               console.log("YEP IM CREATED :D");
             }
         );
