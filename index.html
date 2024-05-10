@@ -1,0 +1,20 @@
+<html>
+  <script src="https://chicosfasinc--dev.sandbox.my.site.com/lightning/lightning.out.js"></script>
+  <div data-wrapper-div="true" ></div>
+  <script>
+    $Lightning.use(
+      "lightningOutTestApp",
+      () {
+        $Lightning.createComponent (
+            "testLightningOut",
+            {},
+            document.querySelector("[data-wrapper-div]"),
+            (cmp) {
+              console.log("YEP IM CREATED :D");
+            }
+        );
+      },
+      "https://chicosfasinc--dev.sandbox.my.site.com/"
+    )
+  </script>
+</html>
