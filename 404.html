@@ -1,22 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <script>
-        // Load chatGpt/index.html without changing the URL
-        window.onload = function() {
-            fetch('https://aadhithya-selvaraj-chicos.github.io/helpcenter/index.html')
-                .then(response => response.text())
-                .then(html => {
-                    const parser = new DOMParser();
-                    const newDoc = parser.parseFromString(html, 'text/html');
-                    document.documentElement.replaceWith(newDoc.documentElement);
-                });
-        };
-    </script>
-</head>
-<body>
-    <p>Loading...</p>
-</body>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  </head>
+  <style>
+    body, * {
+      margin: 0px;
+    }
+  </style>
+  <script src="https://chicosfasinc--dev.sandbox.my.site.com/lightning/lightning.out.js"></script>
+  <div data-wrapper-div="true"></div>
+  <script>
+    $Lightning.use(
+      "c:helpCenterLightningOutApp",
+      function () {
+        $Lightning.createComponent (
+            "c:helpCenterWrapper",
+            {},
+            document.querySelector("[data-wrapper-div]"),
+            function (cmp) {
+              console.log("YEP IM CREATED :D");
+            }
+        );
+      },
+      "https://chicosfasinc--dev.sandbox.my.site.com"
+    )
+  </script>
 </html>
