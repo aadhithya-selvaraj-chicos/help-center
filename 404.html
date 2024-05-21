@@ -1,24 +1,54 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+      body, * {
+        margin: 0px;
+      }
+
+      .spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 3px solid #dddddd;
+        border-top: 3px solid #505050;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
-  <style>
-    body, * {
-      margin: 0px;
-    }
-  </style>
   <script src="https://chicosfasinc--dev.sandbox.my.site.com/lightning/lightning.out.js"></script>
-  <div data-wrapper-div="true"></div>
+  <div data-wrapper-div="true" style="position: relative;">
+    <!-- Spinner starts hidden -->
+    <div class="spinner" style="display: none;"></div>
+  </div>
   <script>
     $Lightning.use(
       "c:helpCenterLightningOutApp",
       function () {
+        // Show spinner while component is being created
+        document.querySelector(".spinner").style.display = "block";
+
         $Lightning.createComponent (
             "c:helpCenterWrapper",
             {},
             document.querySelector("[data-wrapper-div]"),
             function (cmp) {
               console.log("YEP IM CREATED :D");
+              // Hide spinner once component is created
+              document.querySelector(".spinner").style.display = "none";
             }
         );
       },
