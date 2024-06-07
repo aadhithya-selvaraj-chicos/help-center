@@ -1,43 +1,13 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <style>
-      body, * {
-        margin: 0px;
-      }
-      .spinner-wrapper-html {
-        height: 100%;
-        display: flex;
-      }
-      
-      .spinner-html {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 4px solid #dddddd;
-        border-top: 4px solid #505050;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        animation: spin-html 2s linear infinite;
-        scale: 1.5;
-      }
-      
-      @keyframes spin-html {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
   </head>
-  <script src="https://chicosfasinc.my.site.com/ChicosHelpCenter/lightning/lightning.out.js"></script>  
-  <div class="spinner-wrapper-html">
-    <div class="spinner-html"></div>
-  </div>
+  <style>
+    body, * {
+      margin: 0px;
+    }
+  </style>
+  <script src="https://chicosfasinc--qa2.sandbox.my.site.com/ChicosHelpCenter/lightning/lightning.out.js"></script>
   <div data-wrapper-div="true"></div>
   <script>
     $Lightning.use(
@@ -48,12 +18,11 @@
             {},
             document.querySelector("[data-wrapper-div]"),
             function (cmp) {
-              document.querySelector(".spinner-wrapper-html").style.display = "none";
-              document.querySelector(".spinner-html").style.display = "none";
+              console.log("YEP IM CREATED :D");
             }
         );
       },
-      "https://chicosfasinc.my.site.com/ChicosHelpCenter"
+      "https://chicosfasinc--qa2.sandbox.my.site.com/ChicosHelpCenter"
     )
   </script>
 </html>
