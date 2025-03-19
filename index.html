@@ -9,22 +9,6 @@
   </style>
   <script src="https://chicosfasinc--qa2.sandbox.my.site.com/ChicosHelpCenter/lightning/lightning.out.js"></script>
   <div data-wrapper-div="true"></div>
-  <script>
-    $Lightning.use(
-      "c:helpCenterLightningOutApp",
-      function () {
-        $Lightning.createComponent (
-            "c:helpCenterWrapper",
-            {},
-            document.querySelector("[data-wrapper-div]"),
-            function (cmp) {
-              console.log("YEP IM CREATED :D");
-            }
-        );
-      },
-      "https://chicosfasinc--qa2.sandbox.my.site.com/ChicosHelpCenter"
-    )
-  </script> 
   <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -38,6 +22,20 @@
 					scrt2URL: 'https://chicosfasinc--qa2.sandbox.my.salesforce-scrt.com'
 				}
 			);
+			$Lightning.use(
+			      "c:helpCenterLightningOutApp",
+			      function () {
+			        $Lightning.createComponent (
+			            "c:helpCenterWrapper",
+			            {},
+			            document.querySelector("[data-wrapper-div]"),
+			            function (cmp) {
+			              console.log("YEP IM CREATED :D");
+			            }
+			        );
+			      },
+			      "https://chicosfasinc--qa2.sandbox.my.site.com/ChicosHelpCenter"
+			    )
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
