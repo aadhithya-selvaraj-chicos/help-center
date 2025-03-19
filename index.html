@@ -8,8 +8,26 @@
     }
   </style>
   <script src="https://chicosfasinc--qa2.sandbox.my.site.com/ChicosHelpCenter/lightning/lightning.out.js"></script>
+  <script type='text/javascript' src='https://chicosfasinc--qa2.sandbox.my.site.com/ESWVirtualagentMIAW1731583434636/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
   <div data-wrapper-div="true"></div>
   <script>
+    function initEmbeddedMessaging() {
+  		try {
+        console.log("CHAT INVOKED");
+  			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+   
+  			embeddedservice_bootstrap.init(
+  				'00DEa000000Udrx',
+  				'Virtual_agent_MIAW',
+  				'https://chicosfasinc--qa2.sandbox.my.site.com/ESWVirtualagentMIAW1731583434636',
+  				{
+  					scrt2URL: 'https://chicosfasinc--qa2.sandbox.my.salesforce-scrt.com'
+  				}
+  			);
+  		} catch (err) {
+  			console.error('Error loading Embedded Messaging: ', err);
+  		}
+	  }
     $Lightning.use(
       "c:helpCenterLightningOutApp",
       function () {
