@@ -40,6 +40,16 @@
   </div>
   <div data-wrapper-div="true"></div>
   <script>
+    embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DEa000004EFWx',
+				'Virtual_agent_MIAW',
+				'https://chicosfasinc--scratch.sandbox.my.site.com/ESWVirtualagentMIAW1736418764525',
+				{
+					scrt2URL: 'https://chicosfasinc--scratch.sandbox.my.salesforce-scrt.com'
+				}
+			);
     $Lightning.use(
       "c:helpCenterLightningOutApp",
       function () {
@@ -58,4 +68,5 @@
       "https://chicosfasinc--scratch.sandbox.my.site.com/ChicosHelpCenter"
     )
   </script>
+  <script type='text/javascript' src='https://chicosfasinc--scratch.sandbox.my.site.com/ESWVirtualagentMIAW1736418764525/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </html>
